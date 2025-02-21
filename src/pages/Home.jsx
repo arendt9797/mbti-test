@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL.js';
-import HomeCard from '../components/HomeCard';
+import HomeCardForm from '../components/HomeCardForm.jsx';
+import Button from '../ui/Button.jsx';
 
 const Home = () => {
   const cardContents = [
@@ -29,16 +30,11 @@ const Home = () => {
       </p>
       <div className="flex justify-evenly">
         {cardContents.map((content, i) => (
-          <HomeCard key={i} {...content} />
+          <HomeCardForm key={i} {...content} />
         ))}
       </div>
       <Link to={ROUTER_URL.TEST}>
-        <div
-          className="m-auto mt-20 p-2 px-6 w-64 rounded-full bg-primary text-secondary font-semibold hover:bg-primaryHover"
-          onClick={() => {}}
-        >
-          내 성격 알아보러 가기
-        </div>
+        <Button className="mt-20">내 성격 알아보러 가기</Button>
       </Link>
     </div>
   );
