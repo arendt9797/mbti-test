@@ -8,10 +8,10 @@ export default {
         subTitle: '1.125rem',
       },
       colors: {
-        primary: '#F59E0B',
-        secondary: '#222f44',
+        primary: '#222f44',
+        secondary: '#F59E0B',
         neutral: '#E5E7EB',
-        primaryHover: '#f7b44a',
+        primaryHover: '#fcc771',
       },
     },
   },
