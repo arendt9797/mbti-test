@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HeaderLayout from '../components/HeaderLayout';
+import AuthLayout from '../components/UserLayout';
 import Home from '../pages/Home';
 import Test from '../pages/Test';
+import Profile from '../pages/Profile'
 import Results from '../pages/Results';
-import AuthLayout from '../components/UserLayout';
-import UserForm from '../components/UserForm';
+import SignIn from '../pages/SignIn'
+import SignUp from '../pages/SignUp'
 
 const router = createBrowserRouter([
   {
@@ -16,9 +18,9 @@ const router = createBrowserRouter([
       {
         element: <AuthLayout />,
         children: [
-          { path: '/profile', element: <UserForm /> },
-          { path: '/signin', element: <UserForm /> },
-          { path: '/signup', element: <UserForm /> },
+          { path: '/profile', element: <Profile /> },
+          { path: '/signin', element: <SignIn /> },
+          { path: '/signup', element: <SignUp /> },
         ],
       },
     ],
