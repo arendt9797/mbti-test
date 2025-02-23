@@ -5,7 +5,7 @@ export const authApi = axios.create({
   baseURL: import.meta.env.VITE_AUTH_API_URL,
 });
 
-export const userApi = axios.create({
+export const resultApi = axios.create({
   baseURL: import.meta.env.VITE_TEST_RESULT_API_URL,
 });
 
