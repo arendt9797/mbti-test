@@ -17,7 +17,7 @@ function AuthForm() {
   } = useQuery({
     queryKey: [USER_PROFILE],
     queryFn: getUserProfile,
-    staleTime: 1000 * 60 * 3
+    staleTime: 1000 * 60 * 3,
   });
 
   const { mutate, isPending: isUpdating } = useMutation({
@@ -54,7 +54,9 @@ function AuthForm() {
         onChange={(e) => setNewNickname(e.target.value)}
         required
       />
-      <Button type="submit">{isUpdating ? '업데이트 중...' : '프로필 업데이트' }</Button>
+      <Button type="submit">
+        {isUpdating ? '업데이트 중...' : '프로필 업데이트'}
+      </Button>
     </form>
   );
 }
