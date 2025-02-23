@@ -38,7 +38,7 @@ function AuthForm() {
   }, [user]);
 
   if (isPending) return <p>로딩중...</p>;
-  if (isError) return <p>에러 발생: {error.message}</p>;
+  if (isError) return <p>에러 발생! {error.message}</p>;
 
   const handleSubmit = (e) => {
     e.preventDefault();

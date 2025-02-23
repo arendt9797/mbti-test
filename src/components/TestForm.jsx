@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { questions } from '../data/questions';
+import Button from '../ui/Button';
 
 const TestForm = ({ onSubmit }) => {
+  // 내가 고른 선택지들을 저장하는 상태 answer
   const [answers, setAnswers] = useState(
     Array(questions.length).fill({ type: '', answer: '' }),
   );
@@ -18,17 +20,20 @@ const TestForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 p-6 bg-white rounded-lg">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-10 p-6 bg-white rounded-lg"
+    >
       {questions.map((q, index) => (
         <div key={q.id} className="mb-6">
-          <p className="font-semibold text-lg mb-3">{q.question}</p>
+          <p className="font-semibold text-subtitle mb-3">{q.question}</p>
           <div className="space-y-2">
             {q.options.map((option, i) => (
               <label
                 key={i}
                 className={`block p-3 border rounded-lg cursor-pointer transition-colors duration-300 ${
                   answers[index]?.answer === option ? 'bg-gray-100' : ''
-                } hover:bg-gray-100`}
+                } hover:bg-gray-100 flex items-center`}
               >
                 <input
                   type="radio"
@@ -36,7 +41,13 @@ const TestForm = ({ onSubmit }) => {
                   value={option}
                   checked={answers[index]?.answer === option}
                   onChange={() => handleChange(index, option)}
-                  className="mr-2 text-primary-color"
+                  className="hidden"
+                />
+                <span
+                  className={`w-4 h-4 mr-2 border border-gray-300 rounded-full flex items-center justify-center ${
+                    answers[index]?.answer === option &&
+                    'bg-secondary border-white border-2 shadow-[0_0_0_1px_gray]'
+                  }`}
                 />
                 {option}
               </label>
@@ -44,12 +55,12 @@ const TestForm = ({ onSubmit }) => {
           </div>
         </div>
       ))}
-      <button
+      <Button
         type="submit"
-        className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
+        className="w-full py-3 transition duration-300 "
       >
         제출하기
-      </button>
+      </Button>
     </form>
   );
 };

@@ -6,15 +6,16 @@ function HeaderLayout() {
   const { isAuthenticated, clearAccessToken } = useAuthStore();
   const navigate = useNavigate();
 
+  // 토큰을 지우고 로그아웃
   const handleLogout = () => {
     alert('로그아웃 되었습니다!');
     clearAccessToken();
-    navigate(ROUTER_URL.HOME);
+    navigate(ROUTER_URL.SIGNIN);
   };
 
   return (
     <>
-      <div className="bg-secondary h-16 flex justify-between items-center text-xl text-primary font-bold px-10">
+      <div className="bg-secondary h-16 flex justify-between items-center text-xl text-primary font-bold px-10 ">
         <Link to={ROUTER_URL.HOME}>홈</Link>
         {isAuthenticated ? (
           <div className="flex gap-3 text-primary items-center">
