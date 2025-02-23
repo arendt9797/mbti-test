@@ -12,6 +12,7 @@ export default {
         secondary: '#F59E0B',
         neutral: '#E5E7EB',
         primaryHover: '#fcc771',
+        secondaryHover: '#4f71a8',
       },
     },
   },

@@ -1,12 +1,31 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL';
+import useAuthStore from '../store/authStore';
 
 function HeaderLayout() {
+  const { isAuthenticated, clearAccessToken } = useAuthStore();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    alert('로그아웃 되었습니다!');
+    clearAccessToken();
+    navigate(ROUTER_URL.HOME);
+  };
+
   return (
     <>
-      <div className='bg-neutral h-16 flex justify-between items-center text-xl text-primary font-bold px-10'>
+      <div className="bg-secondary h-16 flex justify-between items-center text-xl text-primary font-bold px-10">
         <Link to={ROUTER_URL.HOME}>홈</Link>
-        <Link to={ROUTER_URL.SIGNIN}>로그인</Link>
+        {isAuthenticated ? (
+          <div className='flex gap-3 text-primary items-center'>
+            <Link to={ROUTER_URL.PROFILE}>프로필</Link>
+            <Link to={ROUTER_URL.TEST}>테스트</Link>
+            <Link to={ROUTER_URL.RESULTS}>결과보기</Link>
+            <button onClick={handleLogout} className='bg-primary text-secondary hover:bg-secondaryHover p-2 rounded-md duration-200 ease-in-out'>로그아웃</button>
+          </div>
+        ) : (
+          <Link to={ROUTER_URL.SIGNIN}>로그인</Link>
+        )}
       </div>
       <Outlet />
     </>

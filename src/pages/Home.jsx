@@ -2,10 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL.js';
 import HomeCardForm from '../components/HomeCardForm.jsx';
 import Button from '../ui/Button.jsx';
-import useIsAuthenticated from '../hooks/useIsAuthenticated.js';
+import useAuthStore from '../store/authStore.js';
 
 const Home = () => {
-  const isAuthenticated = useIsAuthenticated();
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   const navigate = useNavigate();
 
