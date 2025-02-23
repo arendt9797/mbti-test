@@ -16,8 +16,12 @@ const router = createBrowserRouter([
     element: <HeaderLayout />,
     children: [
       { path: ROUTER_URL.HOME, element: <Home /> },
-      { path: ROUTER_URL.TEST, element: <Test /> },
       { path: ROUTER_URL.RESULTS, element: <Results /> },
+      { path: ROUTER_URL.TEST, element: (
+        <PrivateRoute>
+          <Test />
+        </PrivateRoute>
+      ) },
       {
         element: <AuthLayout />,
         children: [
