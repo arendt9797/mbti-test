@@ -1,9 +1,14 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL.js';
 import HomeCardForm from '../components/HomeCardForm.jsx';
 import Button from '../ui/Button.jsx';
+import useIsAuthenticated from '../hooks/useIsAuthenticated.js';
 
 const Home = () => {
+  const isAuthenticated = useIsAuthenticated();
+
+  const navigate = useNavigate();
+
   const cardContents = [
     {
       title: '성격 유형 검사',
@@ -22,6 +27,15 @@ const Home = () => {
     },
   ];
 
+  const handleNavigate = () => {
+    if (isAuthenticated) {
+      navigate(ROUTER_URL.TEST);
+    } else {
+      alert('테스트를 위해서는 로그인이 필요합니다.');
+      navigate(ROUTER_URL.SIGNIN);
+    }
+  };
+
   return (
     <div className="text-center">
       <h1 className="text-6xl my-10">무료 성격 테스트</h1>
@@ -33,9 +47,9 @@ const Home = () => {
           <HomeCardForm key={i} {...content} />
         ))}
       </div>
-      <Link to={ROUTER_URL.TEST}>
-        <Button className="mt-20">내 성격 알아보러 가기</Button>
-      </Link>
+      <Button className="mt-20" onClick={handleNavigate}>
+        내 성격 알아보러 가기
+      </Button>
     </div>
   );
 };
