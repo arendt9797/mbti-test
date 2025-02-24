@@ -16,7 +16,7 @@ function HeaderLayout() {
 
   return (
     <>
-      <div className="bg-secondary h-16 flex justify-between items-center text-xl text-primary font-bold px-10 ">
+      <div className="bg-secondary h-16 flex justify-between items-center text-md sm:text-xl text-primary font-bold px-10 ">
         <Link to={ROUTER_URL.HOME}>홈</Link>
         {isAuthenticated ? (
           <div className="flex gap-3 text-primary items-center">

@@ -38,8 +38,8 @@ const Home = () => {
 
   return (
     <div className="text-center">
-      <h1 className="text-6xl my-10">무료 성격 테스트</h1>
-      <p className="text-subTitle my-10">
+      <h1 className="text-5xl sm:text-6xl my-10">무료 성격 테스트</h1>
+      <p className="w-80 m-auto sm:w-full sm:text-subTitle my-10">
         자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
       </p>
       <div className="flex flex-col items-center gap-5 lg:flex-row flex-wrap lg:justify-evenly">
