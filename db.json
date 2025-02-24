@@ -1,3 +1,28 @@
 {
-  "testResults": []
+  "testResults": [
+    {
+      "id": "41b6",
+      "nickname": "멋쟁이토마토",
+      "result": "ESTJ",
+      "visibilty": true,
+      "date": "2025. 2. 24. 오전 10:31:44",
+      "userId": "test07"
+    },
+    {
+      "id": "2347",
+      "nickname": "멋쟁이토마토",
+      "result": "ESTJ",
+      "visibilty": true,
+      "date": "2025. 2. 24. 오전 10:55:42",
+      "userId": "test07"
+    },
+    {
+      "id": "8b6b",
+      "nickname": "멋쟁이토마토",
+      "result": "ESTJ",
+      "visibilty": true,
+      "date": "2025. 2. 24. 오전 10:57:48",
+      "userId": "test07"
+    }
+  ]
 }

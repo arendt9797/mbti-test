@@ -5,15 +5,34 @@ import { createTestResult } from '../apis/testResultsApi';
 import { useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL.js';
 import Button from '../ui/Button.jsx';
+import { useQuery } from '@tanstack/react-query';
+import { USER_PROFILE } from '../constants/queryKeys.js';
+import { getUserProfile } from '../apis/authApi.js';
 
-const TestPage = ({ user }) => {
+const TestPage = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
+  const { data: user } = useQuery({
+    queryKey: [USER_PROFILE],
+    queryFn: getUserProfile,
+    staleTime: 1000 * 60 * 5
+  })
+
+  const addTestResult = async (mbtiResult) => {
+    const newResult = {
+      nickname: user.nickname,
+      result: mbtiResult,
+      visibilty: true,
+      date: new Date().toLocaleString(),
+      userId: user.id,
+    }
+    await createTestResult(newResult)
+  }
 
   const handleTestSubmit = async (answers) => {
     const mbtiResult = calculateMBTI(answers);
-    /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
     setResult(mbtiResult);
+    addTestResult(mbtiResult)
   };
 
   const handleNavigateToResults = () => {

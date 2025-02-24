@@ -17,7 +17,7 @@ function AuthForm() {
   } = useQuery({
     queryKey: [USER_PROFILE],
     queryFn: getUserProfile,
-    staleTime: 1000 * 60 * 3,
+    staleTime: 1000 * 60 * 5,
   });
 
   const { mutate, isPending: isUpdating } = useMutation({
