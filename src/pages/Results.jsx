@@ -4,6 +4,7 @@ import { getTestResults } from '../apis/testResultsApi';
 import ResultForm from '../components/ResultForm';
 import { getUserProfile } from '../apis/authApi';
 import useAuthStore from '../store/authStore';
+import {messages} from '../constants/messages'
 
 function Results() {
   const isAuthenticated = useAuthStore(state=>state.isAuthenticated)
@@ -26,8 +27,8 @@ function Results() {
     staleTime: 1000 * 60 * 1,
   });
 
-  if (isPending) return <p>로딩 중...</p>;
-  if (isError) return <p>에러 발생! {error.message}</p>;
+  if (isPending) return <p className='text-center'>{messages.LOADING}</p>;
+  if (isError) return <p className='text-center'>{messages.ERROR} {error.message}</p>;
 
   // 새로고침 시 캐시가 비워지므로 처음에는 user가 undefinied 될 수 있다.
   // 곧바로 캐시가 채워지고 다시 캐싱된 데이터를 불러오므로 옵셔널 체이닝을 써도 괜찮다.

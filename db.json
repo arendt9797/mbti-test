@@ -33,14 +33,6 @@
       "userId": "test07"
     },
     {
-      "id": "4259",
-      "nickname": "멋진사과",
-      "result": "INTJ",
-      "visibility": true,
-      "date": "2025. 2. 24. 오후 7:17:38",
-      "userId": "uk01"
-    },
-    {
       "id": "e3fd",
       "nickname": "멋진사과",
       "result": "ESFP",
@@ -49,19 +41,19 @@
       "userId": "uk01"
     },
     {
-      "id": "c523",
-      "nickname": "멋진사과",
-      "result": "ISTJ",
-      "visibility": true,
-      "date": "2025. 2. 24. 오후 7:20:44",
-      "userId": "uk01"
-    },
-    {
       "id": "74c3",
       "nickname": "잘생긴사과",
       "result": "ENFP",
       "visibility": true,
       "date": "2025. 2. 24. 오후 7:26:56",
+      "userId": "uk01"
+    },
+    {
+      "id": "475e",
+      "nickname": "멋진사과",
+      "result": "ISFP",
+      "visibility": true,
+      "date": "2025. 2. 24. 오후 7:53:57",
       "userId": "uk01"
     }
   ]

@@ -5,6 +5,7 @@ import { getUserProfile, updateProfile } from '../apis/authApi';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { queryKeys } from '../constants/queryKeys';
+import { messages } from '../constants/messages';
 
 function Profile() {
   const queryClient = useQueryClient();
@@ -36,8 +37,8 @@ function Profile() {
     }
   }, [user]);
 
-  if (isPending) return <p>로딩 중...</p>;
-  if (isError) return <p>에러 발생! {error.message}</p>;
+  if (isPending) return <p>{messages.LOADING}</p>;
+  if (isError) return <p>{messages.ERROR} {error.message}</p>;
 
   const handleSubmit = (e) => {
     e.preventDefault();
