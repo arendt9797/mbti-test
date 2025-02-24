@@ -5,12 +5,13 @@ import { createTestResult } from '../apis/testResultsApi';
 import { useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL.js';
 import Button from '../ui/Button.jsx';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { queryKeys } from '../constants/queryKeys.js';
 import { getUserProfile } from '../apis/authApi.js';
 
 const TestPage = () => {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [result, setResult] = useState(null);
   const { data: user } = useQuery({
     queryKey: [queryKeys.USER_PROFILE],
@@ -33,6 +34,7 @@ const TestPage = () => {
     const mbtiResult = calculateMBTI(answers);
     setResult(mbtiResult);
     addTestResult(mbtiResult)
+    queryClient.invalidateQueries([queryKeys.TEST_RESULT])
   };
 
   const handleNavigateToResults = () => {

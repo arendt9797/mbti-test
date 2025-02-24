@@ -7,10 +7,12 @@ import useAuthStore from '../store/authStore';
 
 function Results() {
   const isAuthenticated = useAuthStore(state=>state.isAuthenticated)
+  // 로그인된 경우에만 useQuery 실행
   const { data: user } = useQuery({
     queryKey: [queryKeys.USER_PROFILE],
     queryFn: getUserProfile,
     staleTime: 1000 * 60 * 5,
+    enabled: isAuthenticated,
   });
   
   const {
