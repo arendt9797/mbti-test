@@ -15,7 +15,7 @@ function AuthForm() {
   
   const {
     pageName,
-    AUTH_TEXT: { SIGNIN_TEXT, SIGNUP_TEXT },
+    authText: { SIGNIN_TEXT, SIGNUP_TEXT },
   } = useOutletContext();
 
   const navigate = useNavigate()

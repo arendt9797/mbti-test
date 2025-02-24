@@ -4,18 +4,17 @@ import Input from '../ui/Input';
 import { getUserProfile, updateProfile } from '../apis/authApi';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { USER_PROFILE } from '../constants/queryKeys';
+import { queryKeys } from '../constants/queryKeys';
 
 function AuthForm() {
   const queryClient = useQueryClient();
-
   const {
     data: user,
     isPending,
     isError,
     error,
   } = useQuery({
-    queryKey: [USER_PROFILE],
+    queryKey: [queryKeys.USER_PROFILE],
     queryFn: getUserProfile,
     staleTime: 1000 * 60 * 5,
   });
@@ -23,7 +22,7 @@ function AuthForm() {
   const { mutate, isPending: isUpdating } = useMutation({
     mutationFn: updateProfile,
     onSuccess: () => {
-      queryClient.invalidateQueries([USER_PROFILE]);
+      queryClient.invalidateQueries([queryKeys.USER_PROFILE]);
       alert('닉네임을 변경했습니다!');
     },
   });
@@ -37,7 +36,7 @@ function AuthForm() {
     }
   }, [user]);
 
-  if (isPending) return <p>로딩중...</p>;
+  if (isPending) return <p>로딩 중...</p>;
   if (isError) return <p>에러 발생! {error.message}</p>;
 
   const handleSubmit = (e) => {

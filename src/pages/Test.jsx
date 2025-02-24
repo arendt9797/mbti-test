@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL.js';
 import Button from '../ui/Button.jsx';
 import { useQuery } from '@tanstack/react-query';
-import { USER_PROFILE } from '../constants/queryKeys.js';
+import { queryKeys } from '../constants/queryKeys.js';
 import { getUserProfile } from '../apis/authApi.js';
 
 const TestPage = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
   const { data: user } = useQuery({
-    queryKey: [USER_PROFILE],
+    queryKey: [queryKeys.USER_PROFILE],
     queryFn: getUserProfile,
     staleTime: 1000 * 60 * 5
   })
@@ -22,7 +22,7 @@ const TestPage = () => {
     const newResult = {
       nickname: user.nickname,
       result: mbtiResult,
-      visibilty: true,
+      visibility: true,
       date: new Date().toLocaleString(),
       userId: user.id,
     }

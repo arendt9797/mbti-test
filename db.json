@@ -1,27 +1,35 @@
 {
   "testResults": [
     {
-      "id": "41b6",
-      "nickname": "멋쟁이토마토",
-      "result": "ESTJ",
-      "visibilty": true,
-      "date": "2025. 2. 24. 오전 10:31:44",
-      "userId": "test07"
+      "id": "c251",
+      "nickname": "몬생긴감자",
+      "result": "INFP",
+      "visibility": false,
+      "date": "2025. 2. 24. 오후 3:03:56",
+      "userId": "test08"
     },
     {
-      "id": "2347",
-      "nickname": "멋쟁이토마토",
-      "result": "ESTJ",
-      "visibilty": true,
-      "date": "2025. 2. 24. 오전 10:55:42",
-      "userId": "test07"
+      "id": "0eb6",
+      "nickname": "몬생긴감자",
+      "result": "ISFJ",
+      "visibility": true,
+      "date": "2025. 2. 24. 오후 3:05:33",
+      "userId": "test08"
     },
     {
-      "id": "8b6b",
+      "id": "a9c9",
+      "nickname": "나는야바나나",
+      "result": "ESFP",
+      "visibility": true,
+      "date": "2025. 2. 24. 오후 3:05:56",
+      "userId": "test09"
+    },
+    {
+      "id": "9ced",
       "nickname": "멋쟁이토마토",
       "result": "ESTJ",
-      "visibilty": true,
-      "date": "2025. 2. 24. 오전 10:57:48",
+      "visibility": true,
+      "date": "2025. 2. 24. 오후 4:51:00",
       "userId": "test07"
     }
   ]

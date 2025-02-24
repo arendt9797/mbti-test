@@ -32,9 +32,9 @@ export const deleteTestResult = async (id) => {
 };
 
 // 공개 / 비공개 전환
-export const updateTestResultVisibility = async (id, visibility) => {
+export const updateTestResultVisibility = async ({id, visibility}) => {
   try {
-    const { data } = await resultApi.patch(`${id}`, visibility);
+    const { data } = await resultApi.patch(`${id}`, {visibility});
     return data;
   } catch (error) {
     throw handleApiError(error);
