@@ -12,13 +12,13 @@ function AuthForm() {
   const [nickname, setNickname] = useState('');
 
   const setAccessToken = useAuthStore((state) => state.setAccessToken);
-  
+
   const {
     pageName,
     authText: { SIGNIN_TEXT, SIGNUP_TEXT },
   } = useOutletContext();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const isSignIn = pageName === ROUTER_URL.SIGNIN;
 
@@ -28,15 +28,15 @@ function AuthForm() {
       if (isSignIn) {
         const loginData = await login({ id, password });
         if (loginData.success) {
-          alert('로그인 성공!')
+          alert('로그인 성공!');
           setAccessToken(loginData.accessToken);
           navigate(ROUTER_URL.HOME);
         }
       } else {
         const registerData = await register({ id, password, nickname });
         if (registerData.success) {
-          alert('회원가입 성공! 로그인을 해주세요')
-          navigate(ROUTER_URL.SIGNIN)
+          alert('회원가입 성공! 로그인을 해주세요.');
+          navigate(ROUTER_URL.SIGNIN);
         }
       }
     } catch (error) {

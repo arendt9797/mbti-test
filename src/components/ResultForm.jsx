@@ -31,9 +31,9 @@ function ResultForm({ isOwner, testResult }) {
   }
 
   return (
-    <Card className="w-full max-w-2xl">
+    <Card className="lg:w-full lg:max-w-2xl">
       <header>
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-2">
           <h1 className="text-white text-title inline">
             {testResult.nickname}
           </h1>

@@ -21,7 +21,7 @@ function UserLayout() {
   const currentPage = pageType[pageName];
 
   return (
-    <div className="w-96 p-8 m-auto mt-12 shadow-md text-center">
+    <div className="w-full max-w-sm p-4 sm:p-8 m-auto mt-6 sm:mt-12 shadow-md text-center">
       <h2 className="text-title font-bold mb-8">{currentPage}</h2>
       <Outlet context={{ pageName, authText }} />
     </div>
