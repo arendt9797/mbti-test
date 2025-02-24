@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { queryKeys } from '../constants/queryKeys';
 
-function AuthForm() {
+function Profile() {
   const queryClient = useQueryClient();
   const {
     data: user,
@@ -60,4 +60,4 @@ function AuthForm() {
   );
 }
 
-export default AuthForm;
+export default Profile;
