@@ -15,6 +15,30 @@
       "visibility": true,
       "date": "2025. 2. 25. 오후 12:57:56",
       "userId": "deploy01"
+    },
+    {
+      "id": "717a",
+      "nickname": "나는야바나나",
+      "result": "ESTJ",
+      "visibility": true,
+      "date": "2025. 2. 25. 오후 1:51:10",
+      "userId": "test09"
+    },
+    {
+      "id": "808e",
+      "nickname": "나는야바나나",
+      "result": "ESTJ",
+      "visibility": true,
+      "date": "2025. 2. 25. 오후 1:53:05",
+      "userId": "test09"
+    },
+    {
+      "id": "b894",
+      "nickname": "나는야바나나",
+      "result": "ESTJ",
+      "visibility": true,
+      "date": "2025. 2. 25. 오후 1:58:51",
+      "userId": "test09"
     }
   ]
 }

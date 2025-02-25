@@ -52,11 +52,11 @@ const TestPage = () => {
             <TestForm onSubmit={handleTestSubmit} />
           </div>
         ) : (
-          <div className="bg-primary rounded-lg p-12 m-20 max-w-3xl">
-            <h1 className="text-3xl font-bold text-secondary mb-6">
-              당신의 성격은... {result} 입니다!
+          <div className="bg-primary rounded-lg p-12 m-20 w-11/12 md:w-full md:max-w-3xl">
+            <h1 className="text-2xl md:text-3xl font-bold text-secondary mb-6">
+              당신의 성격은... <span className='block sm:inline'>{result} 입니다!</span>
             </h1>
-            <p className="text-lg text-neutral mb-6">
+            <p className="text-md md:text-lg text-neutral mb-6">
               {mbtiDescriptions[result] ||
                 '해당 성격 유형에 대한 설명이 없습니다.'}
             </p>
