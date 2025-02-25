@@ -6,7 +6,7 @@ import { queryKeys } from '../constants/queryKeys';
 
 function ResultForm({ isOwner, testResult }) {
   const queryClient = useQueryClient();
-  const {mutate: deleteMutation} = useMutation({
+  const {mutate: deleteMutation, isPending: isDeleting} = useMutation({
     mutationFn: deleteTestResult,
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.TEST_RESULT])
@@ -14,7 +14,7 @@ function ResultForm({ isOwner, testResult }) {
     }
   })
 
-  const {mutate: visibleMutation} = useMutation({
+  const {mutate: visibleMutation, isPending: isUpdating} = useMutation({
     mutationFn: updateTestResultVisibility,
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.TEST_RESULT])
@@ -49,8 +49,8 @@ function ResultForm({ isOwner, testResult }) {
       </main>
       {isOwner && (
         <footer className='flex space-x-2 mt-4 justify-end'>
-          <button className='bg-secondary text-primary font-semibold rounded-md px-3 py-2' onClick={handleVisibilityResult}>{testResult.visibility ? '비공개로 전환' : '공개로 전환'}</button>
-          <button className='bg-red-500 text-white font-semibold rounded-md px-3 py-2' onClick={handleDeleteResult}>삭제</button>
+          <button className='bg-secondary text-primary font-semibold rounded-md px-3 py-2' onClick={handleVisibilityResult}>{isUpdating ? '변경 중...' : testResult.visibility ? '비공개로 전환' : '공개로 전환'}</button>
+          <button className='bg-red-500 text-white font-semibold rounded-md px-3 py-2' onClick={handleDeleteResult}>{isDeleting ? '삭제 중...' : '삭제'}</button>
         </footer>
       )}
     </Card>
