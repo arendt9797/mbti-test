@@ -1,8 +1,11 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import ROUTER_URL from '../constants/routerURL';
 import useAuthStore from '../store/authStore';
+import { useQueryClient } from '@tanstack/react-query';
+import { queryKeys } from '../constants/queryKeys';
 
 function HeaderLayout() {
+  const queryClient = useQueryClient();
   const isAuthenticated = useAuthStore(state=>state.isAuthenticated)
   const clearAccessToken = useAuthStore(state=>state.clearAccessToken)
   const navigate = useNavigate();
@@ -10,7 +13,9 @@ function HeaderLayout() {
   // 토큰을 지우고 로그아웃
   const handleLogout = () => {
     alert('로그아웃 되었습니다!');
+    queryClient.invalidateQueries([queryKeys.USER_PROFILE])
     clearAccessToken();
+
     navigate(ROUTER_URL.SIGNIN);
   };
 
