@@ -3,11 +3,21 @@ import ROUTER_URL from '../constants/routerURL.js';
 import HomeCardForm from '../components/HomeCardForm.jsx';
 import Button from '../ui/Button.jsx';
 import useAuthStore from '../store/authStore.js';
+import {
+  XIcon,
+  LinkedinIcon,
+  LineIcon,
+  TwitterShareButton,
+  LinkedinShareButton,
+  LineShareButton,
+} from 'react-share';
 
 const Home = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
   const navigate = useNavigate();
+
+  const shareUrl = window.location.href;
 
   const cardContents = [
     {
@@ -50,6 +60,17 @@ const Home = () => {
       <Button className="mt-10 mb-10 lg:mt-20" onClick={handleNavigate}>
         내 성격 알아보러 가기
       </Button>
+      <div className='flex gap-2 justify-center mb-4'>
+        <TwitterShareButton url={shareUrl} >
+          <XIcon size={36} round={true} />
+        </TwitterShareButton>
+        <LinkedinShareButton url={shareUrl}>
+          <LinkedinIcon size={36} round={true} />
+        </LinkedinShareButton>
+        <LineShareButton url={shareUrl}>
+          <LineIcon size={36} round={true} />
+        </LineShareButton>
+      </div>
     </div>
   );
 };
