@@ -1,60 +1,12 @@
 {
   "testResults": [
     {
-      "id": "c251",
-      "nickname": "몬생긴감자",
-      "result": "INFP",
-      "visibility": false,
-      "date": "2025. 2. 24. 오후 3:03:56",
-      "userId": "test08"
-    },
-    {
-      "id": "0eb6",
-      "nickname": "몬생긴감자",
-      "result": "ISFJ",
-      "visibility": true,
-      "date": "2025. 2. 24. 오후 3:05:33",
-      "userId": "test08"
-    },
-    {
-      "id": "a9c9",
-      "nickname": "나는야바나나",
-      "result": "ESFP",
-      "visibility": true,
-      "date": "2025. 2. 24. 오후 3:05:56",
-      "userId": "test09"
-    },
-    {
-      "id": "9ced",
+      "id": "b1b6",
       "nickname": "멋쟁이토마토",
-      "result": "ESTJ",
+      "result": "ENTP",
       "visibility": true,
-      "date": "2025. 2. 24. 오후 4:51:00",
+      "date": "2025. 2. 25. 오후 12:27:38",
       "userId": "test07"
-    },
-    {
-      "id": "e3fd",
-      "nickname": "멋진사과",
-      "result": "ESFP",
-      "visibility": false,
-      "date": "2025. 2. 24. 오후 7:18:44",
-      "userId": "uk01"
-    },
-    {
-      "id": "74c3",
-      "nickname": "잘생긴사과",
-      "result": "ENFP",
-      "visibility": true,
-      "date": "2025. 2. 24. 오후 7:26:56",
-      "userId": "uk01"
-    },
-    {
-      "id": "475e",
-      "nickname": "멋진사과",
-      "result": "ISFP",
-      "visibility": true,
-      "date": "2025. 2. 24. 오후 7:53:57",
-      "userId": "uk01"
     }
   ]
 }
