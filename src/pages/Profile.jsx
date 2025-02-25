@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { queryKeys } from '../constants/queryKeys';
 import { messages } from '../constants/messages';
+import { updateToast } from '../utils/toastMessages';
 
 function Profile() {
   const queryClient = useQueryClient();
@@ -24,7 +25,7 @@ function Profile() {
     mutationFn: updateProfile,
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.USER_PROFILE]);
-      alert('닉네임을 변경했습니다!');
+      updateToast();
     },
   });
 

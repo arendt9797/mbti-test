@@ -3,6 +3,7 @@ import Card from '../ui/Card';
 import { mbtiDescriptions } from '../utils/mbtiCalculator';
 import { deleteTestResult, updateTestResultVisibility } from '../apis/testResultsApi';
 import { queryKeys } from '../constants/queryKeys';
+import { deleteToast, updateToast } from '../utils/toastMessages';
 
 function ResultForm({ isOwner, testResult }) {
   const queryClient = useQueryClient();
@@ -10,7 +11,7 @@ function ResultForm({ isOwner, testResult }) {
     mutationFn: deleteTestResult,
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.TEST_RESULT])
-      alert('삭제되었습니다!')
+      deleteToast();
     }
   })
 
@@ -18,7 +19,7 @@ function ResultForm({ isOwner, testResult }) {
     mutationFn: updateTestResultVisibility,
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.TEST_RESULT])
-      alert('변경되었습니다!')
+      updateToast();
     }
   })
 

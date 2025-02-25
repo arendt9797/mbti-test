@@ -5,6 +5,7 @@ import Input from '../ui/Input';
 import { useState } from 'react';
 import { login, register } from '../apis/authApi';
 import useAuthStore from '../store/authStore';
+import { loginToast, signupToast, errorToast } from '../utils/toastMessages.js';
 
 function AuthForm() {
   const [id, setId] = useState('');
@@ -28,19 +29,19 @@ function AuthForm() {
       if (isSignIn) {
         const loginData = await login({ id, password });
         if (loginData.success) {
-          alert('로그인 성공!');
+          loginToast(loginData.nickname);
           setAccessToken(loginData.accessToken);
           navigate(ROUTER_URL.HOME);
         }
       } else {
         const registerData = await register({ id, password, nickname });
         if (registerData.success) {
-          alert('회원가입 성공! 로그인을 해주세요.');
+          signupToast();
           navigate(ROUTER_URL.SIGNIN);
         }
       }
     } catch (error) {
-      alert(error.message);
+      errorToast(error.message);
     }
   };
 

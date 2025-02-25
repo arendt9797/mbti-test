@@ -4,7 +4,7 @@
       "id": "b1b6",
       "nickname": "멋쟁이토마토",
       "result": "ENTP",
-      "visibility": false,
+      "visibility": true,
       "date": "2025. 2. 25. 오후 12:27:38",
       "userId": "test07"
     },
@@ -23,6 +23,14 @@
       "visibility": true,
       "date": "2025. 2. 25. 오후 1:53:05",
       "userId": "test09"
+    },
+    {
+      "id": "46e9",
+      "nickname": "멋쟁이토마토",
+      "result": "ESTJ",
+      "visibility": true,
+      "date": "2025. 2. 25. 오후 3:50:22",
+      "userId": "test07"
     }
   ]
 }
