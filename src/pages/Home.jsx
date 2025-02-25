@@ -7,9 +7,11 @@ import {
   XIcon,
   LinkedinIcon,
   LineIcon,
+  FacebookIcon,
   TwitterShareButton,
   LinkedinShareButton,
   LineShareButton,
+  FacebookShareButton
 } from 'react-share';
 
 const Home = () => {
@@ -70,6 +72,9 @@ const Home = () => {
         <LineShareButton url={shareUrl}>
           <LineIcon size={36} round={true} />
         </LineShareButton>
+        <FacebookShareButton url={shareUrl}>
+          <FacebookIcon size={36} round={true} />
+        </FacebookShareButton>
       </div>
     </div>
   );
