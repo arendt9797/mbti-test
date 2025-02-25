@@ -4,9 +4,9 @@
 - **배포 주소** : https://mbti-test-lime.vercel.app/
 <br/>
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](./README/image.png)
+![alt text](./README/image-1.png)
+![alt text](./README/image-2.png)
 <br/>
 <br/>
 <br/>
