@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=MBTI test&fontSize=90" />
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&text=MBTI%20Test)
 
 # 🤪 MBTI test: 너의 성격을 알아봐!
 - **배포 주소** : https://mbti-test-lime.vercel.app/
